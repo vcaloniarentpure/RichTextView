@@ -61,4 +61,35 @@ class UITextViewGenerator {
         textView.delegate = textViewDelegate
         return textView
     }
+
+    static func getTextView(from input: NSAttributedString,
+                            font: UIFont,
+                            style: HTMLStyleParams?,
+                            textColor: UIColor,
+                            isSelectable: Bool,
+                            isEditable: Bool,
+                            textViewDelegate: RichTextViewDelegate?) -> UITextView {
+        let textView = UITextView()
+        let mutableInput = NSMutableAttributedString(attributedString: input)
+        if let style = style {
+          mutableInput.replaceFont(with: style)
+        } else {
+          mutableInput.replaceFont(with: font)
+        }
+        mutableInput.replaceColor(with: textColor)
+        textView.attributedText = mutableInput
+        textView.accessibilityValue = input.string
+        //disable accesibility if input is emtry string
+        textView.isAccessibilityElement = !input.string.isEmpty
+        textView.isSelectable = isSelectable
+        textView.isEditable = isEditable
+        textView.isScrollEnabled = false
+        textView.textContainerInset = .zero
+        textView.textContainer.lineFragmentPadding = 0
+        if #available(iOS 10.0, *) {
+            textView.adjustsFontForContentSizeCategory = true
+        }
+        textView.delegate = textViewDelegate
+        return textView
+    }
 }

@@ -142,6 +142,7 @@ public class RichTextView: UIView {
                 return UITextViewGenerator.getTextView(
                     from: richText,
                     font: font,
+                    style: self.richTextParser.htmlStyleParams,
                     textColor: self.textColor,
                     isSelectable: self.isSelectable,
                     isEditable: self.isEditable,

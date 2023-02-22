@@ -112,7 +112,11 @@ class RichTextParser {
             textAttachmentAttributes: textAttachmentAttributesInRichText
         ).trimmingTrailingNewlinesAndWhitespaces()
 
-        outputRichText.replaceFont(with: self.font)
+        if let htmlStyleParams = self.htmlStyleParams {
+          outputRichText.replaceFont(with: htmlStyleParams)
+        } else {
+          outputRichText.replaceFont(with: self.font)
+        }
         outputRichText.replaceColor(with: self.textColor)
 
         if richTextWithSpecialDataTypesHandled.errors == nil, richTextWithHTMLAndMarkdownHandled.errors == nil {

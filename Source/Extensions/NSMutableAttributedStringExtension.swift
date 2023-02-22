@@ -14,6 +14,25 @@ extension NSAttributedString.Key {
 }
 
 extension NSMutableAttributedString {
+    func replaceFont(with style: HTMLStyleParams) {
+        self.beginEditing()
+        let defaultFontSize = UIFont.smallSystemFontSize
+        self.enumerateAttribute(.font, in: NSRange(location: 0, length: self.length)) { (value, range, _) in
+          if let oldFont = value as? UIFont,
+             oldFont.fontDescriptor.symbolicTraits.contains(.traitBold) {
+            self.removeAttribute(.font, range: range)
+            self.addAttribute(.font, value: style.boldFont, range: range)
+          } else if let oldFont = value as? UIFont,
+                    let newFontDescriptor = style.baseFont.fontDescriptor.withSymbolicTraits(oldFont.fontDescriptor.symbolicTraits) {
+            let mergedSize = oldFont.pointSize == defaultFontSize ? style.baseFont.pointSize : oldFont.pointSize
+            let mergedFont = UIFont(descriptor: newFontDescriptor, size: mergedSize)
+            self.removeAttribute(.font, range: range)
+            self.addAttribute(.font, value: mergedFont, range: range)
+          }
+        }
+        self.endEditing()
+    }
+
     func replaceFont(with newFont: UIFont) {
         self.beginEditing()
         let defaultFontSize = UIFont.smallSystemFontSize
