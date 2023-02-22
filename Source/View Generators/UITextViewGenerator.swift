@@ -71,11 +71,6 @@ class UITextViewGenerator {
                             textViewDelegate: RichTextViewDelegate?) -> UITextView {
         let textView = UITextView()
         let mutableInput = NSMutableAttributedString(attributedString: input)
-        if let style = style {
-          mutableInput.replaceFont(with: style)
-        } else {
-          mutableInput.replaceFont(with: font)
-        }
         mutableInput.replaceColor(with: textColor)
         textView.attributedText = mutableInput
         textView.accessibilityValue = input.string
