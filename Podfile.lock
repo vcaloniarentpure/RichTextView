@@ -25,7 +25,7 @@ DEPENDENCIES:
   - Quick
   - SnapKit
   - SwiftLint
-  - SwiftRichString (from `https://github.com/tophatmonocle/SwiftRichString.git`)
+  - SwiftRichString
 
 SPEC REPOS:
   trunk:
@@ -36,20 +36,16 @@ SPEC REPOS:
     - Quick
     - SnapKit
     - SwiftLint
+    - SwiftRichString
 
 EXTERNAL SOURCES:
   iosMath:
     :git: https://github.com/tophatmonocle/iosMath.git
-  SwiftRichString:
-    :git: https://github.com/tophatmonocle/SwiftRichString.git
 
 CHECKOUT OPTIONS:
   iosMath:
     :commit: 7518e763c44a82202ec36e518c5ab4b412adbdae
     :git: https://github.com/tophatmonocle/iosMath.git
-  SwiftRichString:
-    :commit: e0b72d5c96968d7802856d2be096202c9798e8d1
-    :git: https://github.com/tophatmonocle/SwiftRichString.git
 
 SPEC CHECKSUMS:
   Down: 8babe0cafe145de188d2efa76ea938a11a5fdc6f
@@ -62,6 +58,6 @@ SPEC CHECKSUMS:
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   SwiftRichString: d61b807db1f8834c26fee92b6dd3e1be2dc5af03
 
-PODFILE CHECKSUM: ecc4996936f36f5e9a7ebeadfeac1dec9b7ffc17
+PODFILE CHECKSUM: 75cd6e6203996d88bd29bd543452e0635d16d658
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.2

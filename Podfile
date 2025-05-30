@@ -12,7 +12,7 @@ target 'RichTextView' do
   pod 'iosMath', :git => 'https://github.com/tophatmonocle/iosMath.git'
   pod 'SwiftLint'
   pod 'SnapKit'
-  pod 'SwiftRichString', :git => 'https://github.com/tophatmonocle/SwiftRichString.git'
+  pod 'SwiftRichString'
 end
 
 # This works around a unit test issue introduced in Xcode 10 / Cocoapod
