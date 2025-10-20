@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '16.0'
 
 #ignore all warnings from all pods
 inhibit_all_warnings!
@@ -9,7 +9,7 @@ target 'RichTextView' do
   use_frameworks!
 
   pod 'Down'
-  pod 'iosMath', :git => 'https://github.com/tophatmonocle/iosMath.git'
+  pod 'iosMath', :git => 'https://github.com/vcaloniarentpure/iosMath'
   pod 'SwiftLint'
   pod 'SnapKit'
   pod 'SwiftRichString'
