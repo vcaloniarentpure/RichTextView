@@ -9,7 +9,7 @@ target 'RichTextView' do
   use_frameworks!
 
   pod 'Down'
-  pod 'iosMath', :git => 'https://github.com/vcaloniarentpure/iosMath'
+  pod 'iosMath', :git => 'https://github.com/vcaloniarentpure/iosMath', :branch => 'master'
   pod 'SwiftLint'
   pod 'SnapKit'
   pod 'SwiftRichString'

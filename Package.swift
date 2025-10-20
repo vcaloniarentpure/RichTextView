@@ -18,7 +18,7 @@ let package = Package(
     ),
     .package(
       name: "iosMath", url: "https://github.com/vcaloniarentpure/iosMath",
-      .upToNextMajor(from: "1.1.1")
+      .branch("master")
     ),
     .package(
       name: "SwiftRichString", url: "https://github.com/malcommac/SwiftRichString.git",
